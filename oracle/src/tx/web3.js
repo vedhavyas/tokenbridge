@@ -50,6 +50,7 @@ async function getRequiredBlockConfirmations(contract) {
     logger.debug({ contractAddress, requiredBlockConfirmations }, 'Required block confirmations obtained')
     return requiredBlockConfirmations
   } catch (e) {
+    logger.error(e)
     throw new Error(`Required block confirmations cannot be obtained`)
   }
 }
