@@ -26,13 +26,9 @@ async function initialChecks() {
     throw new Error(`Unsupported type of bridge: ${ORACLE_BRIDGE_MODE}`)
   }
 
-  console.log(`ERC20_TOKEN_ADDRESS is ${result.ERC20_TOKEN_ADDRESS}`)
-
   if (ORACLE_BRIDGE_MODE === 'ERC_TO_ERC') {
-    console.log('getTokenType...')
     const bridgeTokenContract = new foreignWeb3.eth.Contract(ERC677_BRIDGE_TOKEN_ABI, result.ERC20_TOKEN_ADDRESS)
     result.foreignERC = await getTokenType(bridgeTokenContract, COMMON_FOREIGN_BRIDGE_ADDRESS)
-    console.log(`getTokenType is ${result.foreignERC}`)
   }
 
   console.log(JSON.stringify(result))
