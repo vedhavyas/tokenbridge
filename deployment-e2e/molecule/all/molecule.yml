@@ -29,9 +29,9 @@ verifier:
     name: flake8
   additional_files_or_dirs:
     - ../../tests/*
-    - ../oracle/tests/*
-    - ../ui/tests/*
-    - ../monitor/tests/*
+    - ../../oracle/tests/*
+    - ../../ui/tests/*
+    - ../../monitor/tests/*
 scenario:
   name: all
   test_sequence:
